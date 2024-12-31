@@ -15,6 +15,7 @@ var dragging = false:
 		set_process(value)
 		dragging=value
 var ofs = Vector2(0,0)
+
 @onready var label = $MarginContainer/Label
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
