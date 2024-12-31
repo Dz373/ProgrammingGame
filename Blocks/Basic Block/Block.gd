@@ -1,30 +1,30 @@
 class_name Block
-extends Node2D
+extends Control
+
+@export var connected = false
+@export var blk_name: String
+var pre_blk: Block
+var nxt_blk: Block
+var blk_size: Vector2 = Vector2(0,64)
+
+var shadow: Block = null
+var insert_pos: Vector2
 
 var dragging = false:
 	set(value):
 		set_process(value)
 		dragging=value
 var ofs = Vector2(0,0)
+@onready var label = $MarginContainer/Label
 
-@export var connected = false
-
-@export var blk_name: String
-var pre_blk: Block
-var nxt_blk: Block
-
-var blk_size: Vector2 = Vector2(0,64)
-
-var shadow: Block = null
-var insert_pos: Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if dragging:
 		position = get_global_mouse_position() - ofs
-		
-
+	
 func _ready() -> void:
-	$Label.text = blk_name
+	label.text = blk_name
+	set_process(false)
 
 func _on_button_button_down() -> void:
 	dragging = true

@@ -1,16 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c21yl6v7jnn4a"]
 
 [ext_resource type="Script" path="res://Blocks/Basic Block/Block.gd" id="1_cvbpg"]
-[ext_resource type="Theme" uid="uid://ibdt31cmdmrk" path="res://Blocks/Basic Block/block_theme.tres" id="2_lk5wn"]
+[ext_resource type="Theme" uid="uid://ibdt31cmdmrk" path="res://Themes/block_theme.tres" id="2_lk5wn"]
 [ext_resource type="PackedScene" uid="uid://cumnplhsmht2s" path="res://Blocks/Basic Block/Collision_edge.tscn" id="3_l6ehi"]
 
-[node name="Object" type="Sprite2D"]
-script = ExtResource("1_cvbpg")
-
-[node name="Button" type="Button" parent="."]
+[node name="Object" type="Panel"]
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("2_lk5wn")
+script = ExtResource("1_cvbpg")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
 
 [node name="UpperEdge" parent="." instance=ExtResource("3_l6ehi")]
 position = Vector2(0, -16)
@@ -22,15 +25,16 @@ position = Vector2(0, 56)
 scale = Vector2(2, 0.25)
 collision_mask = 2
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 10
-anchor_right = 1.0
-offset_right = 255.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 256.0
 offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
 theme = ExtResource("2_lk5wn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
-text = "A"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
