@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbpslrlif44jj"]
+
+[ext_resource type="Script" path="res://Blocks/Statement Blocks/move_block.gd" id="1_qkv8o"]
+[ext_resource type="Theme" uid="uid://ibdt31cmdmrk" path="res://Blocks/Basic Block/block_theme.tres" id="2_st8qu"]
+[ext_resource type="PackedScene" uid="uid://cumnplhsmht2s" path="res://Blocks/Basic Block/Collision_edge.tscn" id="3_hsssf"]
+
+[node name="MoveBlock" type="Sprite2D"]
+script = ExtResource("1_qkv8o")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("2_st8qu")
+
+[node name="UpperEdge" parent="." instance=ExtResource("3_hsssf")]
+position = Vector2(0, -16)
+scale = Vector2(2, 0.2)
+collision_layer = 2
+
+[node name="LowerEdge" parent="." instance=ExtResource("3_hsssf")]
+position = Vector2(0, 56)
+scale = Vector2(2, 0.25)
+collision_mask = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 255.0
+offset_bottom = 64.0
+theme = ExtResource("2_st8qu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "Move"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="area_entered" from="UpperEdge" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="UpperEdge" to="." method="_on_area_2d_area_exited"]
