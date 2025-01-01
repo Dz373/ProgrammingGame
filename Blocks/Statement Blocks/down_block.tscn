@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnkas2ni0frf4"]
+
+[ext_resource type="PackedScene" uid="uid://c21yl6v7jnn4a" path="res://Blocks/Basic Block/block.tscn" id="1_1ah2t"]
+[ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="2_s34sc"]
+
+[sub_resource type="GDScript" id="GDScript_ktlm6"]
+script/source = "extends Block
+
+func statement_call(player: Object) -> void:
+	player.position += Vector2.DOWN*Global.tile_size
+"
+
+[node name="Block" instance=ExtResource("1_1ah2t")]
+theme = ExtResource("2_s34sc")
+script = SubResource("GDScript_ktlm6")
+blk_name = "down"
+
+[node name="ColorRect" parent="." index="0"]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" parent="." index="1"]
+text = "down"

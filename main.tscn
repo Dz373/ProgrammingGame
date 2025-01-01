@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3sf4jh83i4ip"]
+[gd_scene load_steps=19 format=4 uid="uid://d3sf4jh83i4ip"]
 
 [ext_resource type="Texture2D" uid="uid://cc7i5p81ekyul" path="res://Sprites/Grass.png" id="1_f2m3r"]
-[ext_resource type="PackedScene" uid="uid://dxdgk1of3qoog" path="res://Blocks/Basic Block/start_block.tscn" id="1_oyqp3"]
 [ext_resource type="Texture2D" uid="uid://3uw5wnnxpror" path="res://Sprites/SwordsmanTemplate.png" id="2_boorp"]
 [ext_resource type="Script" path="res://Objects/player.gd" id="3_ebeeu"]
+[ext_resource type="Script" path="res://Blocks/insert_block.gd" id="4_0757y"]
 [ext_resource type="Script" path="res://Blocks/block_controller.gd" id="4_yyhdy"]
-[ext_resource type="PackedScene" uid="uid://5xaphy0r6q5i" path="res://Blocks/block_list.tscn" id="6_tpob2"]
+[ext_resource type="PackedScene" uid="uid://cnkas2ni0frf4" path="res://Blocks/Statement Blocks/down_block.tscn" id="5_dnays"]
+[ext_resource type="PackedScene" uid="uid://0g13d8ojwddw" path="res://Blocks/Statement Blocks/left_block.tscn" id="5_opag7"]
+[ext_resource type="PackedScene" uid="uid://bpb8vyn1w25nh" path="res://Blocks/Statement Blocks/up_block.tscn" id="6_a3yky"]
+[ext_resource type="PackedScene" uid="uid://bx122j3vq7012" path="res://Blocks/Statement Blocks/right_block.tscn" id="7_36olu"]
+[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="9_tufpr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wy7or"]
 texture = ExtResource("1_f2m3r")
@@ -17,6 +21,14 @@ texture = ExtResource("1_f2m3r")
 
 [sub_resource type="TileSet" id="TileSet_vgbs1"]
 sources/0 = SubResource("TileSetAtlasSource_wy7or")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6hy0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdliw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slj15"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0dmo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf34t"]
 bg_color = Color(0, 0.729412, 0.0901961, 1)
@@ -47,24 +59,137 @@ hframes = 5
 vframes = 12
 script = ExtResource("3_ebeeu")
 
-[node name="Block List" parent="." instance=ExtResource("6_tpob2")]
+[node name="BlockList" type="Panel" parent="."]
+offset_left = 1721.0
+offset_right = 1918.0
+offset_bottom = 1080.0
 
-[node name="Start" parent="." instance=ExtResource("1_oyqp3")]
-offset_left = 1280.0
-offset_right = 1280.0
+[node name="ScrollContainer" type="ScrollContainer" parent="BlockList"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 175.0
+offset_bottom = 1058.0
+scale = Vector2(1.00471, 1.02005)
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="RunButton" type="Button" parent="."]
-offset_left = 1616.0
-offset_top = 8.0
-offset_right = 1896.0
-offset_bottom = 52.0
+[node name="VBoxContainer" type="VBoxContainer" parent="BlockList/ScrollContainer"]
+custom_minimum_size = Vector2(152, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Left" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="BlockList/ScrollContainer/VBoxContainer/Left" instance=ExtResource("5_opag7")]
+layout_mode = 0
+offset_right = 151.0
+
+[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Left"]
+layout_mode = 0
+offset_top = -0.0024693
+offset_right = 152.0
+offset_bottom = 31.9975
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
+script = ExtResource("4_0757y")
+blk = ExtResource("5_opag7")
+
+[node name="Right" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="BlockList/ScrollContainer/VBoxContainer/Right" instance=ExtResource("7_36olu")]
+layout_mode = 0
+offset_right = 151.0
+
+[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Right"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 32.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
+script = ExtResource("4_0757y")
+blk = ExtResource("7_36olu")
+
+[node name="Up" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="BlockList/ScrollContainer/VBoxContainer/Up" instance=ExtResource("6_a3yky")]
+layout_mode = 0
+offset_right = 151.0
+
+[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Up"]
+layout_mode = 0
+offset_top = -0.0024693
+offset_right = 152.0
+offset_bottom = 31.9975
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
+script = ExtResource("4_0757y")
+blk = ExtResource("6_a3yky")
+
+[node name="Down" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Block" parent="BlockList/ScrollContainer/VBoxContainer/Down" instance=ExtResource("5_dnays")]
+layout_mode = 0
+offset_right = 151.0
+
+[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Down"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 32.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
+script = ExtResource("4_0757y")
+blk = ExtResource("5_dnays")
+
+[node name="CodeList" type="Panel" parent="."]
+offset_left = 1440.0
+offset_right = 1696.0
+offset_bottom = 1080.0
+script = ExtResource("4_yyhdy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CodeList"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 1024.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CodeList/ScrollContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="RunButton" type="Button" parent="CodeList"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1032.0
+offset_right = 216.0
+offset_bottom = 1068.0
+theme_override_fonts/font = ExtResource("9_tufpr")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_tf34t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lwoc8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tf34t")
 text = "Run"
 
-[node name="BlockController" type="Node2D" parent="."]
-script = ExtResource("4_yyhdy")
-
-[connection signal="button_up" from="RunButton" to="BlockController" method="run_code"]
+[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Left/Button" to="BlockList/ScrollContainer/VBoxContainer/Left/Button" method="_on_button_down"]
+[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Right/Button" to="BlockList/ScrollContainer/VBoxContainer/Right/Button" method="_on_button_down"]
+[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Up/Button" to="BlockList/ScrollContainer/VBoxContainer/Up/Button" method="_on_button_down"]
+[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Down/Button" to="BlockList/ScrollContainer/VBoxContainer/Down/Button" method="_on_button_down"]
+[connection signal="button_down" from="CodeList/RunButton" to="CodeList" method="run_code"]

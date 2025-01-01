@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx122j3vq7012"]
+
+[ext_resource type="PackedScene" uid="uid://c21yl6v7jnn4a" path="res://Blocks/Basic Block/block.tscn" id="1_5qvab"]
+[ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="2_egk3t"]
+
+[sub_resource type="GDScript" id="GDScript_d1w85"]
+script/source = "extends Block
+
+func statement_call(player: Object) -> void:
+	player.position += Vector2.RIGHT*Global.tile_size
+"
+
+[node name="Block" instance=ExtResource("1_5qvab")]
+theme = ExtResource("2_egk3t")
+script = SubResource("GDScript_d1w85")
+blk_name = "right"
+
+[node name="ColorRect" parent="." index="0"]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" parent="." index="1"]
+text = "right"

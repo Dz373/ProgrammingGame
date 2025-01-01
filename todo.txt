@@ -5,15 +5,17 @@ Task:
 -Secondary mechanic: interact with objects to solve puzzles
 
 to do
---trash can to delete blocks
 --smooth movement
+--deselect
+--interact
+--inventory
 --puzzles
 --levels
 --reset level button
---interact
 --level select
 --title screen
 --option menu
+--show tips and explainations when hovering
 
 types of statements
 -if
