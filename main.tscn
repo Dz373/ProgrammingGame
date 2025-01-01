@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d3sf4jh83i4ip"]
+[gd_scene load_steps=24 format=4 uid="uid://d3sf4jh83i4ip"]
 
 [ext_resource type="Texture2D" uid="uid://cc7i5p81ekyul" path="res://Sprites/Grass.png" id="1_f2m3r"]
 [ext_resource type="Texture2D" uid="uid://3uw5wnnxpror" path="res://Sprites/SwordsmanTemplate.png" id="2_boorp"]
@@ -22,6 +22,13 @@ texture = ExtResource("1_f2m3r")
 [sub_resource type="TileSet" id="TileSet_vgbs1"]
 sources/0 = SubResource("TileSetAtlasSource_wy7or")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjcbn"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6hy0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdliw"]
@@ -29,6 +36,14 @@ sources/0 = SubResource("TileSetAtlasSource_wy7or")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slj15"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0dmo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if6o0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j45hg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhlu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnfs7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf34t"]
 bg_color = Color(0, 0.729412, 0.0901961, 1)
@@ -60,9 +75,10 @@ vframes = 12
 script = ExtResource("3_ebeeu")
 
 [node name="BlockList" type="Panel" parent="."]
-offset_left = 1721.0
-offset_right = 1918.0
+offset_left = 1723.0
+offset_right = 1920.0
 offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bjcbn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BlockList"]
 layout_mode = 0
@@ -79,7 +95,7 @@ custom_minimum_size = Vector2(152, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-theme_override_constants/separation = 50
+theme_override_constants/separation = 40
 
 [node name="Left" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -156,15 +172,27 @@ script = ExtResource("4_0757y")
 blk = ExtResource("5_dnays")
 
 [node name="CodeList" type="Panel" parent="."]
-offset_left = 1440.0
-offset_right = 1696.0
+offset_left = 1340.0
+offset_right = 1723.0
 offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bjcbn")
 script = ExtResource("4_yyhdy")
+
+[node name="Deselect" type="Button" parent="CodeList"]
+layout_mode = 0
+offset_right = 383.0
+offset_bottom = 1080.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if6o0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j45hg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhlu8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tnfs7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CodeList"]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 1024.0
+offset_left = 66.0
+offset_top = 102.0
+offset_right = 322.0
+offset_bottom = 1021.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -177,12 +205,12 @@ alignment = 1
 
 [node name="RunButton" type="Button" parent="CodeList"]
 layout_mode = 0
-offset_left = 40.0
+offset_left = 102.0
 offset_top = 1032.0
-offset_right = 216.0
+offset_right = 278.0
 offset_bottom = 1068.0
 theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
 theme_override_styles/hover = SubResource("StyleBoxFlat_tf34t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lwoc8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tf34t")
@@ -192,4 +220,5 @@ text = "Run"
 [connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Right/Button" to="BlockList/ScrollContainer/VBoxContainer/Right/Button" method="_on_button_down"]
 [connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Up/Button" to="BlockList/ScrollContainer/VBoxContainer/Up/Button" method="_on_button_down"]
 [connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Down/Button" to="BlockList/ScrollContainer/VBoxContainer/Down/Button" method="_on_button_down"]
+[connection signal="button_down" from="CodeList/Deselect" to="CodeList" method="deselect"]
 [connection signal="button_down" from="CodeList/RunButton" to="CodeList" method="run_code"]

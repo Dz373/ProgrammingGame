@@ -18,7 +18,10 @@ func delete()->void:
 	queue_free()
 	
 func select()->void:
-	code_list.cur_blk=self
+	if code_list.cur_blk==self:
+		code_list.cur_blk=null
+	else:
+		code_list.cur_blk=self
 
 func _to_string() -> String:
 	return blk_name

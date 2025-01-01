@@ -6,7 +6,6 @@ Task:
 
 to do
 --smooth movement
---deselect
 --interact
 --inventory
 --puzzles
