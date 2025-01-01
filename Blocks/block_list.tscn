@@ -5,15 +5,16 @@
 [ext_resource type="Script" path="res://Blocks/block_button.gd" id="3_xmkqp"]
 
 [node name="Block List" type="Panel"]
-offset_left = 832.0
-offset_right = 1152.0
-offset_bottom = 1152.0
+offset_left = 1600.0
+offset_top = 64.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_top = 32.0
 offset_right = 320.0
-offset_bottom = 1120.0
+offset_bottom = 1056.0
 horizontal_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
@@ -28,6 +29,7 @@ layout_mode = 2
 theme = ExtResource("2_vl8c5")
 
 [node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/Panel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 11.0
 offset_right = 124.0
@@ -52,20 +54,5 @@ offset_bottom = 64.0
 script = ExtResource("3_xmkqp")
 blk = ExtResource("1_utpto")
 
-[node name="Panel2" type="Panel" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(256, 64)
-layout_mode = 2
-theme = ExtResource("2_vl8c5")
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
-custom_minimum_size = Vector2(256, 64)
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 64.0
-script = ExtResource("3_xmkqp")
-blk = ExtResource("1_utpto")
-
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Panel/Button" to="ScrollContainer/VBoxContainer/Panel/Button" method="_on_button_down"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel/Button" to="ScrollContainer/VBoxContainer/Panel/Button" method="_on_button_up"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Panel2/Button" to="ScrollContainer/VBoxContainer/Panel2/Button" method="_on_button_down"]
-[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel2/Button" to="ScrollContainer/VBoxContainer/Panel2/Button" method="_on_button_up"]

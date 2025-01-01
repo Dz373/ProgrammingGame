@@ -33,6 +33,11 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+	#delete block if in list area
+	if position.x > $"../Block List".position.x:
+		queue_free()
+		pass
+	
 	if connected:
 		position = insert_pos
 		if shadow:

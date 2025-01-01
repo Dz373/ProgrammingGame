@@ -1,7 +1,19 @@
-to do
---buttons to add blocks
---trash can to delete blocks
+Task: 
+	Create a core mechanic and a secondary mechanic that can be 
+	used for progression.
+-Core mechanic: control player using code blocks
+-Secondary mechanic: interact with objects to solve puzzles
 
+to do
+--trash can to delete blocks
+--smooth movement
+--puzzles
+--levels
+--reset level button
+--interact
+--level select
+--title screen
+--option menu
 
 types of statements
 -if
@@ -11,13 +23,14 @@ types of statements
 -number blocks
 -variables
 
-if statement for enchants
--ex:
---if player.health > 50:
----atk*2
---else:
----atk+1
+Other ideas:
+-Fight enemies
+-Functions
 
-loops for turns
--powerups where loops iterate more than once per turn
--skills that activate based on loop number
+level ideas:
+-pick up items to build
+-fight enemies
+-navigate maze
+-limited amount of moves
+
+loops and functions have their own start block and end block for code
