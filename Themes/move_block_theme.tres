@@ -1,25 +1,14 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ibdt31cmdmrk"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://br2jd411kbyjc"]
 
-[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="1_10q3w"]
+[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="1_vle4c"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66h4b"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de0o4"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.801239, 0.412646, 0.184755, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dtft"]
+bg_color = Color(0.121614, 0.675771, 0.732264, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [resource]
 Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
@@ -40,6 +29,5 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
-Button/fonts/font = ExtResource("1_10q3w")
-Button/styles/focus = SubResource("StyleBoxEmpty_66h4b")
-Panel/styles/panel = SubResource("StyleBoxFlat_de0o4")
+Button/fonts/font = ExtResource("1_vle4c")
+Panel/styles/panel = SubResource("StyleBoxFlat_5dtft")
