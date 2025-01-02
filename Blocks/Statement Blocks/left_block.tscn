@@ -7,17 +7,13 @@
 script/source = "extends Block
 
 func statement_call(player: Object) -> void:
-	player.position += Vector2.LEFT*Global.tile_size
+	player.cell += Vector2.LEFT
 "
 
 [node name="Block" instance=ExtResource("1_hemk1")]
 theme = ExtResource("2_nvx7j")
 script = SubResource("GDScript_bi57v")
 blk_name = "left"
-
-[node name="ColorRect" parent="." index="0"]
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Label" parent="." index="1"]
 text = "left

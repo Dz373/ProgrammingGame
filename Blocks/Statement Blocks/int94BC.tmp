@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://bexrmr6x3qt16"]
+
+[ext_resource type="Theme" uid="uid://bms52pkg4ue82" path="res://Themes/interact_block_theme.tres" id="1_spmav"]
+[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="3_q7kob"]
+[ext_resource type="Texture2D" uid="uid://bok24ks4mpoi6" path="res://Sprites/up_arrow.png" id="4_3ahb2"]
+[ext_resource type="Texture2D" uid="uid://bvlghdjadqfc" path="res://Sprites/red_x.png" id="5_vj6cf"]
+
+[sub_resource type="GDScript" id="GDScript_ic4oq"]
+script/source = "extends Block
+
+func statement_call(player: Object) -> void:
+	print(\" no statement call\")
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3d06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lxf8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kxms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmgr8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sc4xw"]
+
+[node name="Block" type="Panel"]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 256.0
+offset_bottom = 32.0
+theme = ExtResource("1_spmav")
+script = SubResource("GDScript_ic4oq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.388235)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 8.0
+offset_right = 147.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_q7kob")
+theme_override_font_sizes/font_size = 16
+text = "interact"
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="."]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 32.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3d06")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2lxf8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7kxms")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmgr8")
+toggle_mode = true
+
+[node name="Up" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 4.0
+offset_right = 184.0
+offset_bottom = 28.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sc4xw")
+icon = ExtResource("4_3ahb2")
+
+[node name="Down" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 28.0
+offset_right = 240.0
+offset_bottom = 52.0
+rotation = 3.14159
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sc4xw")
+icon = ExtResource("4_3ahb2")
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 4.0
+offset_right = 248.0
+offset_bottom = 28.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sc4xw")
+icon = ExtResource("5_vj6cf")
+
+[connection signal="button_down" from="Select" to="." method="select"]
+[connection signal="button_down" from="Up" to="." method="move_up"]
+[connection signal="button_down" from="Down" to="." method="move_down"]
+[connection signal="button_down" from="Delete" to="." method="delete"]

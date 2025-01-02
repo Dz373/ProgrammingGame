@@ -24,8 +24,9 @@ func _ready() -> void:
 
 func run_code() -> void:
 	list = code_list.get_children()
-	cur_blk = list[0]
-	timer.start()
+	if list.size()>0:
+		cur_blk = list[0]
+		timer.start()
 	
 func timer_timeout()->void:
 	cur_blk.statement_call(player)
@@ -33,7 +34,6 @@ func timer_timeout()->void:
 		timer.stop()
 		cur_blk=null
 		return
-	
 	cur_blk = list[cur_blk.get_index()+1]
 
 func deselect()->void:

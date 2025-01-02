@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3uw5wnnxpror"
-path="res://.godot/imported/SwordsmanTemplate.png-994afaa94c1abbe0e6c596eb803b3a5f.ctex"
+uid="uid://hiu3ehypbkde"
+path="res://.godot/imported/robot.png-76da536eef95e5b76be8d1b90128b52d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwordsmanTemplate.png"
-dest_files=["res://.godot/imported/SwordsmanTemplate.png-994afaa94c1abbe0e6c596eb803b3a5f.ctex"]
+source_file="res://Sprites/robot.png"
+dest_files=["res://.godot/imported/robot.png-76da536eef95e5b76be8d1b90128b52d.ctex"]
 
 [params]
 

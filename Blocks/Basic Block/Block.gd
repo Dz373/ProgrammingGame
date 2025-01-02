@@ -1,7 +1,6 @@
 class_name Block
 extends Control
 
-@export var blk_name: String
 @onready var code_list=$"../../../"
 @onready var highlight = $ColorRect
 
@@ -24,9 +23,9 @@ func select()->void:
 		code_list.cur_blk=self
 
 func _to_string() -> String:
-	return blk_name
+	return $Label.text
 
 #Override
 @warning_ignore("unused_parameter")
 func statement_call(player: Object) -> void:
-	print(blk_name + " no statement call")
+	print(to_string() + "no statement call")

@@ -5,8 +5,11 @@ Task:
 -Secondary mechanic: interact with objects to solve puzzles
 
 to do
---smooth movement
 --interact
+-lever
+-push rock
+-open doors
+
 --inventory
 --puzzles
 --levels
