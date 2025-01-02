@@ -2,17 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c21yl6v7jnn4a" path="res://Blocks/Basic Block/block.tscn" id="1_1ah2t"]
 [ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="2_s34sc"]
-
-[sub_resource type="GDScript" id="GDScript_ktlm6"]
-script/source = "extends Block
-
-func statement_call(player: Object) -> void:
-	player.cell += Vector2.DOWN
-"
+[ext_resource type="Script" path="res://Blocks/Statement Blocks/down_block.gd" id="3_35bee"]
 
 [node name="Block" instance=ExtResource("1_1ah2t")]
 theme = ExtResource("2_s34sc")
-script = SubResource("GDScript_ktlm6")
+script = ExtResource("3_35bee")
 
 [node name="Label" parent="." index="1"]
 text = "down"

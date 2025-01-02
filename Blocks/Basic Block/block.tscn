@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Blocks/Basic Block/block.gd" id="1_cvbpg"]
 [ext_resource type="Theme" uid="uid://ibdt31cmdmrk" path="res://Themes/block_theme.tres" id="2_lk5wn"]
 [ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="3_obhkd"]
-[ext_resource type="Texture2D" uid="uid://bok24ks4mpoi6" path="res://Sprites/up_arrow.png" id="3_u5va6"]
-[ext_resource type="Texture2D" uid="uid://bvlghdjadqfc" path="res://Sprites/red_x.png" id="4_jux7s"]
+[ext_resource type="Texture2D" uid="uid://bok24ks4mpoi6" path="res://Sprites/UI/up_arrow.png" id="3_u5va6"]
+[ext_resource type="Texture2D" uid="uid://bvlghdjadqfc" path="res://Sprites/UI/red_x.png" id="4_jux7s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3d06"]
 

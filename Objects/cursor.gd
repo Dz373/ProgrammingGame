@@ -7,11 +7,11 @@ var cell := Vector2.ZERO:
 		if new_cell.is_equal_approx(cell):
 			return
 		cell = new_cell
-		position = grid.calculate_map_position(cell)
+		position = grid.get_map_position(cell)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	cell = grid.calculate_grid_coordinates(get_global_mouse_position())
+	cell = grid.get_cell_position(get_global_mouse_position())
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("confirm"):
