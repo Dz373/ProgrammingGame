@@ -2,22 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c21yl6v7jnn4a" path="res://Blocks/Basic Block/block.tscn" id="1_hemk1"]
 [ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="2_nvx7j"]
-
-[sub_resource type="GDScript" id="GDScript_bi57v"]
-script/source = "extends Block
-
-func statement_call(player: Object) -> void:
-	player.position += Vector2.LEFT*Global.tile_size
-"
+[ext_resource type="Script" path="res://Blocks/Statement Blocks/left_block.gd" id="3_1df2i"]
 
 [node name="Block" instance=ExtResource("1_hemk1")]
 theme = ExtResource("2_nvx7j")
-script = SubResource("GDScript_bi57v")
-blk_name = "left"
-
-[node name="ColorRect" parent="." index="0"]
-grow_horizontal = 2
-grow_vertical = 2
+script = ExtResource("3_1df2i")
 
 [node name="Label" parent="." index="1"]
 text = "left

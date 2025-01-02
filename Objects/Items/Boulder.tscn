@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfkryf4ctcvn"]
+
+[ext_resource type="Texture2D" uid="uid://pkd67l7a1yed" path="res://Sprites/Objects/boulder.png" id="1_1svn2"]
+[ext_resource type="Script" path="res://Objects/Items/pushable.gd" id="1_mwnlq"]
+
+[node name="Boulder" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_1svn2")
+centered = false
+script = ExtResource("1_mwnlq")
+passable = false
