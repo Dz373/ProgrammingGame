@@ -5,14 +5,14 @@ Task:
 -Secondary mechanic: interact with objects to solve puzzles
 
 to do
+--loop
 --puzzles
 --levels
---reset level button
---clear all button
 --level select
 --title screen
 --option menu
 --show tips and explainations when hovering
+--scope highlight
 
 types of statements
 -if

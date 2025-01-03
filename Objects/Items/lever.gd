@@ -11,3 +11,6 @@ extends Item
 
 func interact()->void:
 	toggle = !toggle
+
+func reset()->void:
+	toggle = initial_state.toggle

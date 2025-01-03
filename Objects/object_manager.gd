@@ -22,18 +22,24 @@ func _ready() -> void:
 	#set player position to start_pad
 	player.cell = start_pad.cell
 
-func move_item(item: Item, cell:Vector2)->void:
-	if cell in interactables:
-		interactables.erase(cell)
-		interactables[item.cell] = item
+func move_item(item: Item, old_cell:Vector2, new_cell:Vector2)->void:
+	if(old_cell == new_cell):
+		return
 	
-	if cell in blockables:
-		blockables.erase(cell)
-		blockables[item.cell] = item
+	if old_cell in interactables:
+		interactables.erase(old_cell)
+		interactables[new_cell] = item
 	
-	if cell in items:
-		items.erase(cell)
-		items[item.cell] = item
-
+	if old_cell in blockables:
+		blockables.erase(old_cell)
+		blockables[new_cell] = item
+	
+	if old_cell in items:
+		items.erase(old_cell)
+		items[new_cell] = item
+	
 func reset()->void:
 	player.cell = start_pad.cell
+	$"../CodeList/RunButton".disabled = false
+	for child in get_children():
+		child.reset()

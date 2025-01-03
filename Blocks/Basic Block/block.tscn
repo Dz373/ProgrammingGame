@@ -17,7 +17,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sc4xw"]
 
 [node name="Block" type="Panel"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(256, 32)
 offset_right = 256.0
 offset_bottom = 32.0
 theme = ExtResource("2_lk5wn")
@@ -47,7 +47,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Select" type="Button" parent="."]
 layout_mode = 0
-offset_right = 152.0
+offset_right = 256.0
 offset_bottom = 32.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b3d06")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2lxf8")

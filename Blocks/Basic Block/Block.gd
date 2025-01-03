@@ -1,7 +1,7 @@
 class_name Block
 extends Control
 
-@onready var code_list=$"../../../"
+@onready var block_controller=$"../../../"
 @onready var highlight = $ColorRect
 
 func move_up()->void:
@@ -12,15 +12,15 @@ func move_down()->void:
 	get_parent().move_child(self, get_index()+1)
 	
 func delete()->void:
-	if code_list.cur_blk==self:
-		code_list.cur_blk=null
+	if block_controller.cur_blk==self:
+		block_controller.cur_blk=null
 	queue_free()
 	
 func select()->void:
-	if code_list.cur_blk==self:
-		code_list.cur_blk=null
+	if block_controller.cur_blk==self:
+		block_controller.cur_blk=null
 	else:
-		code_list.cur_blk=self
+		block_controller.cur_blk=self
 
 func _to_string() -> String:
 	return $Label.text
