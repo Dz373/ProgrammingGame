@@ -20,15 +20,8 @@ func move(direction: Vector2)->void:
 	if cell+direction in obj_manager.blockables:
 		#check if object can be pushed
 		var block = obj_manager.blockables[cell+direction]
-		
 		if block is Pushable:
-			var pushed = block.push(direction)
-			
-			if pushed:
-				obj_manager.move_item(block, cell+direction)
+			if block.push(direction):
 				cell+=direction
 	else:
 		cell+=direction
-
-func is_valid_cell(new_cell: Vector2)->bool:
-	return grid.is_within_bounds(new_cell)

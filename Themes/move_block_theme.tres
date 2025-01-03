@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://br2jd411kbyjc"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://br2jd411kbyjc"]
 
 [ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="1_vle4c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02rwp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dtft"]
 bg_color = Color(0.121614, 0.675771, 0.732264, 1)
@@ -30,4 +32,5 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_vle4c")
+Button/styles/focus = SubResource("StyleBoxEmpty_02rwp")
 Panel/styles/panel = SubResource("StyleBoxFlat_5dtft")
