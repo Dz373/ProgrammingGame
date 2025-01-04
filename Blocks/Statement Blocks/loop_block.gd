@@ -14,7 +14,7 @@ func statement_call(player: Object) -> void:
 		for blk in code_list:
 			if blk is Block:
 				block_controller.cur_blk=blk
-				blk.statement_call(player)
+				await blk.statement_call(player)
 				await get_tree().create_timer(block_controller.timer_interval).timeout
 
 func loop_select()->void:
@@ -29,3 +29,10 @@ func _on_list_resized() -> void:
 	if list:
 		custom_minimum_size.y = list.size.y+30
 		list.move_child($List/Panel, $List/Panel.get_index()+1)
+
+func delete()->void:
+	if block_controller.cur_blk==self:
+		block_controller.cur_blk=null
+	if block_controller.insert_list==list:
+		block_controller.insert_list=block_controller.code_list
+	queue_free()

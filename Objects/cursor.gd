@@ -1,11 +1,9 @@
 extends Node2D
 
 @export var grid: Resource
-var cell := Vector2.ZERO:
+var cell := Vector2i.ZERO:
 	set(value):
-		var new_cell: Vector2 = grid.grid_clamp(value)
-		if new_cell.is_equal_approx(cell):
-			return
+		var new_cell: Vector2i = grid.grid_clamp(value)
 		cell = new_cell
 		position = grid.get_map_position(cell)
 

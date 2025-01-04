@@ -13,14 +13,15 @@ var cur_blk:Block:
 		cur_blk=blk
 		if blk!=null:
 			cur_blk.highlight.visible=true
-			
+			#changes scope to current block's
 			if insert_list != blk.get_parent():
 				insert_list=blk.get_parent()
+		
 
 @onready var list_highlight = $ListHighlight
 var cur_highlight:
 	set(value):
-		if cur_highlight:
+		if cur_highlight and is_instance_valid(cur_highlight):
 			cur_highlight.visible=false
 		if value:
 			cur_highlight=value
@@ -29,7 +30,7 @@ var insert_list:
 	set(value):
 		if value==code_list:
 			list_highlight.visible=true
-			if cur_highlight:
+			if cur_highlight and is_instance_valid(cur_highlight):
 				cur_highlight.visible=false
 		else:
 			list_highlight.visible=false
@@ -45,7 +46,7 @@ func run_code() -> void:
 		await blk.statement_call(player)
 		await get_tree().create_timer(timer_interval).timeout
 	
-	if cur_highlight:
+	if cur_highlight and is_instance_valid(cur_highlight):
 		cur_highlight.visible=false
 	list_highlight.visible=false
 	cur_blk=null
