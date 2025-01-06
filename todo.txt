@@ -2,10 +2,9 @@ Task:
 	Create a core mechanic and a secondary mechanic that can be 
 	used for progression.
 -Core mechanic: control player using code blocks
--Secondary mechanic: interact with objects to solve puzzles
+-Secondary mechanic: interact with objects to solve puzzles and open the path to the goal
 
 to do
---walls
 --title screen
 --puzzles
 --levels
@@ -27,7 +26,7 @@ types of statements
 
 objects
 -door: interact in on top to open
--toggle blocks
+-toggle tiles
 -portals
 -pressure pads
 

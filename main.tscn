@@ -1,33 +1,22 @@
-[gd_scene load_steps=54 format=4 uid="uid://d3sf4jh83i4ip"]
+[gd_scene load_steps=21 format=4 uid="uid://d3sf4jh83i4ip"]
 
-[ext_resource type="Texture2D" uid="uid://hiu3ehypbkde" path="res://Sprites/Objects/robot.png" id="1_iptua"]
 [ext_resource type="Texture2D" uid="uid://r48pfh8qja7p" path="res://Sprites/UI/tiles.png" id="1_ws66q"]
 [ext_resource type="PackedScene" uid="uid://g41rpwgc4ftg" path="res://Objects/Items/lever.tscn" id="2_2f7f0"]
-[ext_resource type="Texture2D" uid="uid://wb1tv84u5l65" path="res://Sprites/UI/cursor.png" id="2_2s8gt"]
-[ext_resource type="Script" path="res://Objects/item_manager.gd" id="2_pfv3j"]
-[ext_resource type="Script" path="res://Objects/player.gd" id="3_ebeeu"]
-[ext_resource type="Script" path="res://Blocks/insert_block.gd" id="4_0757y"]
-[ext_resource type="Texture2D" uid="uid://canfvoqt47ksb" path="res://Sprites/Objects/pad.png" id="4_xfkfe"]
-[ext_resource type="Script" path="res://Blocks/block_controller.gd" id="4_yyhdy"]
-[ext_resource type="Script" path="res://Objects/cursor.gd" id="5_8l2uv"]
-[ext_resource type="PackedScene" uid="uid://ctfkryf4ctcvn" path="res://Objects/Items/Boulder.tscn" id="5_bjwma"]
-[ext_resource type="PackedScene" path="res://Blocks/Statement Blocks/down_block.tscn" id="5_dnays"]
-[ext_resource type="PackedScene" path="res://Blocks/Statement Blocks/left_block.tscn" id="5_opag7"]
-[ext_resource type="Script" path="res://Objects/Items/items.gd" id="5_qg736"]
+[ext_resource type="Script" path="res://Objects/Scripts/item_manager.gd" id="2_pfv3j"]
+[ext_resource type="PackedScene" uid="uid://cc26swwlumk7f" path="res://Objects/Items/goal.tscn" id="4_w3rey"]
+[ext_resource type="PackedScene" uid="uid://ctfkryf4ctcvn" path="res://Objects/Items/boulder.tscn" id="5_bjwma"]
+[ext_resource type="PackedScene" uid="uid://depjdjk3u57g4" path="res://Objects/Items/pad.tscn" id="5_qw3j3"]
 [ext_resource type="Resource" uid="uid://bs7xbimxelni" path="res://Objects/Grid.tres" id="6_3cybb"]
-[ext_resource type="PackedScene" path="res://Blocks/Statement Blocks/up_block.tscn" id="6_a3yky"]
-[ext_resource type="PackedScene" path="res://Blocks/Statement Blocks/right_block.tscn" id="7_36olu"]
-[ext_resource type="Texture2D" uid="uid://cx2ldrua24jo0" path="res://Sprites/Objects/flag.png" id="8_1p3em"]
-[ext_resource type="Texture2D" uid="uid://c0jaehlrd6tnq" path="res://Sprites/Objects/walls.png" id="9_o37dn"]
-[ext_resource type="Script" path="res://tile_item.gd" id="9_oeh3c"]
-[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="9_tufpr"]
-[ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="12_af6yh"]
-[ext_resource type="PackedScene" path="res://Blocks/Statement Blocks/interact_block.tscn" id="12_ky0mn"]
-[ext_resource type="PackedScene" uid="uid://bj5crwajpafwl" path="res://Blocks/Statement Blocks/loop_block.tscn" id="13_hwbw4"]
-[ext_resource type="Theme" uid="uid://bms52pkg4ue82" path="res://Themes/interact_block_theme.tres" id="19_yaji6"]
-[ext_resource type="Theme" uid="uid://4enepiw8chdr" path="res://Themes/loop_block_theme.tres" id="21_gevry"]
+[ext_resource type="PackedScene" uid="uid://8ll3h4syuwey" path="res://Objects/Items/plate.tscn" id="8_54m8a"]
+[ext_resource type="PackedScene" uid="uid://w741gk288dd7" path="res://Objects/Items/door-h.tscn" id="9_tj7r8"]
+[ext_resource type="PackedScene" uid="uid://djth848pnepxh" path="res://Objects/Items/door-v.tscn" id="10_ak7ug"]
+[ext_resource type="PackedScene" uid="uid://d24n1ri25w5f5" path="res://Objects/player.tscn" id="14_q4hx3"]
+[ext_resource type="PackedScene" uid="uid://8j0ms34buj3c" path="res://Objects/cursor.tscn" id="15_wio4e"]
+[ext_resource type="PackedScene" uid="uid://bq4a6p62iuyyj" path="res://Blocks/block_list.tscn" id="16_aucji"]
+[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="17_o60dx"]
+[ext_resource type="PackedScene" uid="uid://dt7n0qecoo7m0" path="res://Blocks/code_list.tscn" id="17_rhide"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wc7ly"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dasvj"]
 texture = ExtResource("1_ws66q")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -92,157 +81,19 @@ tile_size = Vector2i(32, 32)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Path"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/1 = SubResource("TileSetAtlasSource_wc7ly")
+sources/1 = SubResource("TileSetAtlasSource_dasvj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2tms"]
-texture = ExtResource("9_o37dn")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/terrains_peering_bit/right_side = 0
-0:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0 = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/left_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/terrains_peering_bit/bottom_side = 0
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/terrains_peering_bit/bottom_side = 0
-0:1/0/terrains_peering_bit/top_side = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/terrains_peering_bit/right_side = 0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/terrains_peering_bit/top_side = 0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/terrains_peering_bit/right_side = 0
-0:2/0/terrains_peering_bit/top_side = 0
-1:2/0 = 0
-1:2/0/terrain_set = 0
-1:2/0/terrain = 0
-1:2/0/terrains_peering_bit/right_side = 0
-1:2/0/terrains_peering_bit/left_side = 0
-2:2/0 = 0
-2:2/0/terrain_set = 0
-2:2/0/terrain = 0
-2:2/0/terrains_peering_bit/left_side = 0
-2:2/0/terrains_peering_bit/top_side = 0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eok5x"]
 
-[sub_resource type="TileSet" id="TileSet_betty"]
-tile_size = Vector2i(32, 32)
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Walls"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_u2tms")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjcbn"]
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6hy0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdliw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slj15"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0dmo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ki0l"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-
-[sub_resource type="Theme" id="Theme_i5hqk"]
-Panel/styles/panel = SubResource("StyleBoxFlat_5ki0l")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if6o0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j45hg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhlu8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnfs7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d08et"]
-bg_color = Color(0.303233, 0.303233, 0.303233, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tafi8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvja5"]
-bg_color = Color(0, 0.292441, 0.0156803, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbcen"]
-bg_color = Color(0, 0.364305, 0.0246217, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwoc8"]
-bg_color = Color(0.105882, 0.72549, 0, 0.584314)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf34t"]
-bg_color = Color(0, 0.729412, 0.0901961, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6par6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7r380"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnyqw"]
 bg_color = Color(0.536592, 1.3236e-06, 2.88785e-07, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynd5i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5vul"]
 bg_color = Color(1, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu3m5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3ysb"]
-bg_color = Color(0, 0.170657, 0.999999, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhidc"]
-bg_color = Color(0, 0.543851, 0.94163, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -253,385 +104,55 @@ border_width_bottom = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Tiles" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAMAA4AAQAAAAAAAAAMAA0AAQAAAAAAAAAMAAwAAQABAAIAAAALAAwAAQAAAAAAAAAIAAoAAQAAAAAAAAAHAA8AAQAAAAAAAAAIAA8AAQAAAAAAAAAJAA8AAQAAAAAAAAAKAA8AAQAAAAAAAAALABAAAQAAAAAAAAAMABAAAQAAAAAAAAANABAAAQAAAAAAAAAOABAAAQAAAAAAAAAOAA8AAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAJAAUAAQAAAAIAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAIAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAIAAAANAAYAAQACAAIAAAAMAAYAAQABAAAAAAAMAAcAAQABAAEAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAPAAkAAQABAAIAAAAPAAgAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA8AAQAAAAAAAAAAABAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQADAAAAAAABAAIAAQAAAAIAAAABAAMAAQAAAAIAAAABAAgAAQAAAAAAAAABAAoAAQAAAAAAAAABAAsAAQAAAAAAAAABAAwAAQAAAAAAAAABAA0AAQAAAAAAAAABAA8AAQAAAAAAAAABABAAAQAAAAAAAAACAAAAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAACABAAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAA8AAQAAAAAAAAADABAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAEAAAAEAA8AAQAAAAAAAAAEABAAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAEAAAAFAA8AAQAAAAAAAAAFABAAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAEAAAAAAAGAA8AAQAAAAAAAAAGABAAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHABAAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAIABAAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQADAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQABAAAAAAAJAAYAAQABAAEAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAA4AAQAAAAAAAAAJABAAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAEAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAEAAAAKAAYAAQAAAAEAAAAKAAcAAQAAAAAAAAAKAAgAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAQAAAAAAAAAKAA4AAQAAAAAAAAAKABAAAQAAAAAAAAALAAAAAQAAAAAAAAALAAEAAQADAAAAAAALAAIAAQACAAIAAAALAAMAAQAAAAIAAAALAAQAAQACAAIAAAALAAYAAQACAAEAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAALAAsAAQAAAAAAAAALAA0AAQAAAAAAAAALAA4AAQAAAAAAAAALAA8AAQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAEAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAEAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQABAAIAAAAMAAsAAQABAAIAAAAMAA8AAQAAAAAAAAANAAAAAQAAAAAAAAANAAEAAQABAAAAAAANAAIAAQACAAIAAAANAAMAAQAAAAIAAAANAAQAAQACAAIAAAANAAgAAQAAAAAAAAANAAkAAQABAAIAAAANAAoAAQABAAIAAAANAAsAAQABAAIAAAANAAwAAQABAAIAAAANAA0AAQABAAIAAAANAA4AAQAAAAAAAAANAA8AAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAEAAAAOAAIAAQAAAAEAAAAOAAMAAQAAAAAAAAAOAAQAAQAAAAEAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAEAAAAOAAgAAQAAAAAAAAAOAAkAAQABAAIAAAAOAAoAAQABAAIAAAAOAAsAAQABAAIAAAAOAAwAAQABAAIAAAAOAA0AAQABAAIAAAAOAA4AAQABAAIAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAEAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAAAAAAPAAQAAQAAAAEAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAEAAAAPAAoAAQABAAIAAAAPAAsAAQABAAIAAAAPAAwAAQABAAIAAAAPAA0AAQABAAIAAAAPAA4AAQABAAIAAAAPAA8AAQAAAAAAAAAPABAAAQAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAQACAAAAAAAQAAIAAQACAAIAAAAQAAMAAQAAAAIAAAAQAAQAAQACAAIAAAAQAAUAAQAAAAIAAAAQAAYAAQACAAEAAAAQAAcAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAQAAoAAQABAAIAAAAQAAsAAQABAAIAAAAQAAwAAQABAAIAAAAQAA0AAQABAAIAAAAQAA4AAQABAAIAAAAQAA8AAQAAAAAAAAAQABAAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAEAAAARAAMAAQAAAAAAAAARAAQAAQAAAAEAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAARAAgAAQAAAAAAAAARAAkAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQABAAIAAAARAAwAAQABAAIAAAARAA0AAQABAAIAAAARAA4AAQABAAIAAAARAA8AAQAAAAAAAAARABAAAQAAAAAAAAASAAAAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQACAAAAAAASAAMAAQAAAAIAAAASAAQAAQACAAEAAAASAAUAAQAAAAAAAAASAAYAAQAAAAAAAAASAAcAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAASAAoAAQAAAAAAAAASAAsAAQAAAAAAAAASAAwAAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAATAAcAAQAAAAAAAAATAAgAAQAAAAAAAAATAAkAAQAAAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAATAAwAAQAAAAAAAAATAA0AAQAAAAAAAAATAA4AAQAAAAAAAAATAA8AAQAAAAAAAAATABAAAQAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAQAAAAAAAAAUAAIAAQAAAAAAAAAUAAMAAQAAAAAAAAAUAAQAAQAAAAAAAAAUAAUAAQAAAAAAAAAUAAYAAQAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAQAAAAAAAAAUAAkAAQAAAAAAAAAUAAoAAQAAAAAAAAAUAAsAAQAAAAAAAAAUAAwAAQAAAAAAAAAUAA0AAQAAAAAAAAAUAA4AAQAAAAAAAAAUAA8AAQAAAAAAAAAUABAAAQAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAQAAAAAAAAAVAAIAAQAAAAAAAAAVAAMAAQAAAAAAAAAVAAQAAQAAAAAAAAAVAAUAAQAAAAAAAAAVAAYAAQAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAQAAAAAAAAAVAAkAAQAAAAAAAAAVAAoAAQAAAAAAAAAVAAsAAQAAAAAAAAAVAAwAAQAAAAAAAAAVAA0AAQAAAAAAAAAVAA4AAQAAAAAAAAAVAA8AAQAAAAAAAAAVABAAAQAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAQAAAAAAAAAWAAMAAQAAAAAAAAAWAAQAAQAAAAAAAAAWAAUAAQAAAAAAAAAWAAYAAQAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAQAAAAAAAAAWAAkAAQAAAAAAAAAWAAoAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAwAAQAAAAAAAAAWAA0AAQAAAAAAAAAWAA4AAQAAAAAAAAAWAA8AAQAAAAAAAAAWABAAAQAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAQAAAAAAAAAXAAIAAQAAAAAAAAAXAAMAAQAAAAAAAAAXAAQAAQAAAAAAAAAXAAUAAQAAAAAAAAAXAAYAAQAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAsAAQAAAAAAAAAXAAwAAQAAAAAAAAAXAA0AAQAAAAAAAAAXAA4AAQAAAAAAAAAXAA8AAQAAAAAAAAAXABAAAQAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAQAAAAAAAAAYAAIAAQAAAAAAAAAYAAMAAQAAAAAAAAAYAAQAAQAAAAAAAAAYAAUAAQAAAAAAAAAYAAYAAQAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAAAAAAYAAoAAQAAAAAAAAAYAAsAAQAAAAAAAAAYAAwAAQAAAAAAAAAYAA0AAQAAAAAAAAAYAA4AAQAAAAAAAAAYAA8AAQAAAAAAAAAYABAAAQAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAQAAAAAAAAAZAAIAAQAAAAAAAAAZAAMAAQAAAAAAAAAZAAQAAQAAAAAAAAAZAAUAAQAAAAAAAAAZAAYAAQAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAQAAAAAAAAAZAAkAAQAAAAAAAAAZAAoAAQAAAAAAAAAZAAsAAQAAAAAAAAAZAAwAAQAAAAAAAAAZAA0AAQAAAAAAAAAZAA4AAQAAAAAAAAAZAA8AAQAAAAAAAAAZABAAAQAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAQAAAAAAAAAaAAIAAQAAAAAAAAAaAAMAAQAAAAAAAAAaAAQAAQAAAAAAAAAaAAUAAQAAAAAAAAAaAAYAAQAAAAAAAAAaAAcAAQAAAAAAAAAaAAgAAQAAAAAAAAAaAAkAAQAAAAAAAAAaAAoAAQAAAAAAAAAaAAsAAQAAAAAAAAAaAAwAAQAAAAAAAAAaAA0AAQAAAAAAAAAaAA4AAQAAAAAAAAAaAA8AAQAAAAAAAAAaABAAAQAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAQAAAAAAAAAbAAIAAQAAAAAAAAAbAAMAAQAAAAAAAAAbAAQAAQAAAAAAAAAbAAUAAQAAAAAAAAAbAAYAAQAAAAAAAAAbAAcAAQAAAAAAAAAbAAgAAQAAAAAAAAAbAAkAAQAAAAAAAAAbAAoAAQAAAAAAAAAbAAsAAQAAAAAAAAAbAAwAAQAAAAAAAAAbAA0AAQAAAAAAAAAbAA4AAQAAAAAAAAAbAA8AAQAAAAAAAAAbABAAAQAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAQAAAAAAAAAcAAIAAQAAAAAAAAAcAAMAAQAAAAAAAAAcAAQAAQAAAAAAAAAcAAUAAQAAAAAAAAAcAAYAAQAAAAAAAAAcAAcAAQAAAAAAAAAcAAgAAQAAAAAAAAAcAAkAAQAAAAAAAAAcAAoAAQAAAAAAAAAcAAsAAQAAAAAAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAAAAAAcAA4AAQAAAAAAAAAcAA8AAQAAAAAAAAAcABAAAQAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAQAAAAAAAAAdAAIAAQAAAAAAAAAdAAMAAQAAAAAAAAAdAAQAAQAAAAAAAAAdAAUAAQAAAAAAAAAdAAYAAQAAAAAAAAAdAAcAAQAAAAAAAAAdAAgAAQAAAAAAAAAdAAkAAQAAAAAAAAAdAAoAAQAAAAAAAAAdAAsAAQAAAAAAAAAdAAwAAQAAAAAAAAAdAA0AAQAAAAAAAAAdAA4AAQAAAAAAAAAdAA8AAQAAAAAAAAAdABAAAQAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAACAA8AAQAAAAAAAAADAA4AAQAAAAAAAAADAA0AAQAAAAAAAAADAAwAAQAAAAAAAAADAAsAAQAAAAAAAAADAAoAAQAAAAAAAAADAAkAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAEAA4AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA4AAQAAAAAAAAAHAA4AAQAAAAAAAAAHAA0AAQAAAAAAAAAIAA0AAQAAAAAAAAAJAA0AAQAAAAAAAAAKAA0AAQAAAAAAAAAKAAwAAQAAAAAAAAAJAAwAAQAAAAAAAAAIAA4AAQAAAAAAAAAGAAsAAQAAAAAAAAAGAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAACAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAFAAsAAQAAAAAAAAAEAA0AAQAAAAAAAAAFAA0AAQAAAAAAAAAGAA0AAQAAAAAAAAAIAAwAAQAAAAAAAAAJAAsAAQAAAAAAAAAIAAsAAQAAAAAAAAAHAAsAAQAAAAAAAAAHAAwAAQAAAAAAAAAGAAwAAQAAAAAAAAAFAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAABAAkAAQAAAAAAAAANAAcAAQACAAEAAAAIAAQAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAQAAQAAAAIAAAABAAUAAQAAAAIAAAABAAYAAQAAAAIAAAABAAcAAQABAAEAAAACAAcAAQACAAEAAAACAAYAAQAAAAIAAAACAAUAAQABAAAAAAADAAUAAQACAAAAAAADAAYAAQAAAAIAAAADAAcAAQABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAMAA4AAQAAAAAAAAAMAA0AAQAAAAAAAAAMAAwAAQABAAIAAAALAAwAAQAAAAAAAAAIAAoAAQAAAAAAAAAHAA8AAQAAAAAAAAAIAA8AAQAAAAAAAAAJAA8AAQAAAAAAAAAKAA8AAQAAAAAAAAALABAAAQAAAAAAAAAMABAAAQAAAAAAAAANABAAAQAAAAAAAAAOABAAAQAAAAAAAAAOAA8AAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAAOAAcAAQABAAEAAAAPAAcAAQAAAAEAAAAPAAkAAQABAAIAAAAPAAgAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA8AAQAAAAAAAAAAABAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQADAAAAAAABAAIAAQAAAAIAAAABAAMAAQAAAAIAAAABAAgAAQAAAAAAAAABAAoAAQAAAAAAAAABAAsAAQAAAAAAAAABAAwAAQAAAAAAAAABAA0AAQAAAAAAAAABAA8AAQAAAAAAAAABABAAAQAAAAAAAAACAAAAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAACABAAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAA8AAQAAAAAAAAADABAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAEAAAAEAA8AAQAAAAAAAAAEABAAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAEAAAAFAA8AAQAAAAAAAAAFABAAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAEAAAAAAAGAA8AAQAAAAAAAAAGABAAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHABAAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAIABAAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAA4AAQAAAAAAAAAJABAAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAgAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAQAAAAAAAAAKAA4AAQAAAAAAAAAKABAAAQAAAAAAAAALAAAAAQAAAAAAAAALAAEAAQAAAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAALAAsAAQAAAAAAAAALAA0AAQAAAAAAAAALAA4AAQAAAAAAAAALAA8AAQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQABAAIAAAAMAAsAAQABAAIAAAAMAA8AAQAAAAAAAAANAAAAAQAAAAAAAAANAAEAAQAAAAAAAAANAAIAAQAAAAAAAAANAAMAAQAAAAAAAAANAAQAAQAAAAAAAAANAAgAAQAAAAAAAAANAAkAAQABAAIAAAANAAoAAQABAAIAAAANAAsAAQABAAIAAAANAAwAAQABAAIAAAANAA0AAQABAAIAAAANAA4AAQAAAAAAAAANAA8AAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAQAAQABAAAAAAAOAAUAAQAAAAIAAAAOAAYAAQAAAAIAAAAOAAgAAQAAAAAAAAAOAAkAAQABAAIAAAAOAAoAAQABAAIAAAAOAAsAAQABAAIAAAAOAAwAAQABAAIAAAAOAA0AAQABAAIAAAAOAA4AAQABAAIAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAAAAAAPAAQAAQAAAAEAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAoAAQABAAIAAAAPAAsAAQABAAIAAAAPAAwAAQABAAIAAAAPAA0AAQABAAIAAAAPAA4AAQABAAIAAAAPAA8AAQAAAAAAAAAPABAAAQAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAMAAQAAAAAAAAAQAAQAAQAAAAEAAAAQAAUAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAcAAQAAAAEAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAQAAoAAQABAAIAAAAQAAsAAQABAAIAAAAQAAwAAQABAAIAAAAQAA0AAQABAAIAAAAQAA4AAQABAAIAAAAQAA8AAQAAAAAAAAAQABAAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAAAAAARAAMAAQAAAAAAAAARAAQAAQACAAAAAAARAAUAAQAAAAIAAAARAAYAAQAAAAIAAAARAAcAAQACAAIAAAARAAgAAQAAAAIAAAARAAkAAQABAAEAAAARAAoAAQAAAAAAAAARAAsAAQABAAIAAAARAAwAAQABAAIAAAARAA0AAQABAAIAAAARAA4AAQABAAIAAAARAA8AAQAAAAAAAAARABAAAQAAAAAAAAASAAAAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQAAAAAAAAASAAMAAQAAAAAAAAASAAQAAQAAAAAAAAASAAUAAQAAAAAAAAASAAYAAQAAAAAAAAASAAcAAQAAAAEAAAASAAgAAQAAAAAAAAASAAkAAQAAAAEAAAASAAoAAQAAAAAAAAASAAsAAQAAAAAAAAASAAwAAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQADAAAAAAATAAIAAQAAAAIAAAATAAMAAQAAAAIAAAATAAQAAQAAAAIAAAATAAUAAQAAAAIAAAATAAYAAQAAAAIAAAATAAcAAQACAAEAAAATAAgAAQAAAAAAAAATAAkAAQAEAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAATAAwAAQAAAAAAAAATAA0AAQAAAAAAAAATAA4AAQAAAAAAAAATAA8AAQAAAAAAAAATABAAAQAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAQAAAAAAAAAUAAIAAQAAAAAAAAAUAAMAAQAAAAAAAAAUAAQAAQAAAAAAAAAUAAUAAQAAAAAAAAAUAAYAAQAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAQAAAAAAAAAUAAoAAQAAAAAAAAAUAAsAAQAAAAAAAAAUAAwAAQAAAAAAAAAUAA0AAQAAAAAAAAAUAA4AAQAAAAAAAAAUAA8AAQAAAAAAAAAUABAAAQAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAQAAAAAAAAAVAAIAAQAAAAAAAAAVAAMAAQAAAAAAAAAVAAQAAQAAAAAAAAAVAAUAAQAAAAAAAAAVAAYAAQAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAQAAAAAAAAAVAAkAAQAAAAAAAAAVAAoAAQAAAAAAAAAVAAsAAQAAAAAAAAAVAAwAAQAAAAAAAAAVAA0AAQAAAAAAAAAVAA4AAQAAAAAAAAAVAA8AAQAAAAAAAAAVABAAAQAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAQAAAAAAAAAWAAMAAQAAAAAAAAAWAAQAAQAAAAAAAAAWAAUAAQAAAAAAAAAWAAYAAQAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAQAAAAAAAAAWAAkAAQAAAAAAAAAWAAoAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAwAAQAAAAAAAAAWAA0AAQAAAAAAAAAWAA4AAQAAAAAAAAAWAA8AAQAAAAAAAAAWABAAAQAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAQAAAAAAAAAXAAIAAQAAAAAAAAAXAAMAAQAAAAAAAAAXAAQAAQAAAAAAAAAXAAUAAQAAAAAAAAAXAAYAAQAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAsAAQAAAAAAAAAXAAwAAQAAAAAAAAAXAA0AAQAAAAAAAAAXAA4AAQAAAAAAAAAXAA8AAQAAAAAAAAAXABAAAQAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAQAAAAAAAAAYAAIAAQAAAAAAAAAYAAMAAQAAAAAAAAAYAAQAAQAAAAAAAAAYAAUAAQAAAAAAAAAYAAYAAQAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAAAAAAYAAoAAQAAAAAAAAAYAAsAAQAAAAAAAAAYAAwAAQAAAAAAAAAYAA0AAQAAAAAAAAAYAA4AAQAAAAAAAAAYAA8AAQAAAAAAAAAYABAAAQAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAQAAAAAAAAAZAAIAAQAAAAAAAAAZAAMAAQAAAAAAAAAZAAQAAQAAAAAAAAAZAAUAAQAAAAAAAAAZAAYAAQAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAQAAAAAAAAAZAAkAAQAAAAAAAAAZAAoAAQAAAAAAAAAZAAsAAQAAAAAAAAAZAAwAAQAAAAAAAAAZAA0AAQAAAAAAAAAZAA4AAQAAAAAAAAAZAA8AAQAAAAAAAAAZABAAAQAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAQAAAAAAAAAaAAIAAQAAAAAAAAAaAAMAAQAAAAAAAAAaAAQAAQAAAAAAAAAaAAUAAQAAAAAAAAAaAAYAAQAAAAAAAAAaAAcAAQAAAAAAAAAaAAgAAQAAAAAAAAAaAAkAAQAAAAAAAAAaAAoAAQAAAAAAAAAaAAsAAQAAAAAAAAAaAAwAAQAAAAAAAAAaAA0AAQAAAAAAAAAaAA4AAQAAAAAAAAAaAA8AAQAAAAAAAAAaABAAAQAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAQAAAAAAAAAbAAIAAQAAAAAAAAAbAAMAAQAAAAAAAAAbAAQAAQAAAAAAAAAbAAUAAQAAAAAAAAAbAAYAAQAAAAAAAAAbAAcAAQAAAAAAAAAbAAgAAQAAAAAAAAAbAAkAAQAAAAAAAAAbAAoAAQAAAAAAAAAbAAsAAQAAAAAAAAAbAAwAAQAAAAAAAAAbAA0AAQAAAAAAAAAbAA4AAQAAAAAAAAAbAA8AAQAAAAAAAAAbABAAAQAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAQAAAAAAAAAcAAIAAQAAAAAAAAAcAAMAAQAAAAAAAAAcAAQAAQAAAAAAAAAcAAUAAQAAAAAAAAAcAAYAAQAAAAAAAAAcAAcAAQAAAAAAAAAcAAgAAQAAAAAAAAAcAAkAAQAAAAAAAAAcAAoAAQAAAAAAAAAcAAsAAQAAAAAAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAAAAAAcAA4AAQAAAAAAAAAcAA8AAQAAAAAAAAAcABAAAQAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAQAAAAAAAAAdAAIAAQAAAAAAAAAdAAMAAQAAAAAAAAAdAAQAAQAAAAAAAAAdAAUAAQAAAAAAAAAdAAYAAQAAAAAAAAAdAAcAAQAAAAAAAAAdAAgAAQAAAAAAAAAdAAkAAQAAAAAAAAAdAAoAAQAAAAAAAAAdAAsAAQAAAAAAAAAdAAwAAQAAAAAAAAAdAA0AAQAAAAAAAAAdAA4AAQAAAAAAAAAdAA8AAQAAAAAAAAAdABAAAQAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAACAA8AAQAAAAAAAAADAA4AAQAAAAAAAAADAA0AAQAAAAAAAAADAAwAAQAAAAAAAAADAAsAAQAAAAAAAAADAAoAAQAAAAAAAAADAAkAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAEAA4AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA4AAQAAAAAAAAAHAA4AAQAAAAAAAAAHAA0AAQAAAAAAAAAIAA0AAQAAAAAAAAAJAA0AAQAAAAAAAAAKAA0AAQAAAAAAAAAKAAwAAQAAAAAAAAAJAAwAAQAAAAAAAAAIAA4AAQAAAAAAAAAGAAsAAQAAAAAAAAAGAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAACAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAFAAsAAQAAAAAAAAAEAA0AAQAAAAAAAAAFAA0AAQAAAAAAAAAGAA0AAQAAAAAAAAAIAAwAAQAAAAAAAAAJAAsAAQAAAAAAAAAIAAsAAQAAAAAAAAAHAAsAAQAAAAAAAAAHAAwAAQAAAAAAAAAGAAwAAQAAAAAAAAAFAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAABAAkAAQAAAAAAAAANAAcAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAIAAQAAAAAAAAACAAEAAQAAAAAAAAABAAQAAQAAAAIAAAABAAUAAQAAAAIAAAABAAYAAQAAAAIAAAABAAcAAQABAAEAAAACAAcAAQACAAEAAAACAAYAAQAAAAIAAAACAAUAAQABAAAAAAADAAUAAQACAAAAAAADAAYAAQAAAAIAAAADAAcAAQABAAEAAAAUAAkAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_vgbs1")
 
 [node name="Objects" type="Node2D" parent="."]
 script = ExtResource("2_pfv3j")
 grid = ExtResource("6_3cybb")
 
-[node name="Goal" type="Sprite2D" parent="Objects"]
-position = Vector2(640, 448)
-scale = Vector2(2, 2)
-texture = ExtResource("8_1p3em")
-centered = false
-script = ExtResource("5_qg736")
+[node name="Pad" parent="Objects" instance=ExtResource("5_qw3j3")]
+position = Vector2(513, 640)
 
-[node name="Pad" type="Sprite2D" parent="Objects"]
-position = Vector2(512, 576)
-scale = Vector2(2, 2)
-texture = ExtResource("4_xfkfe")
-centered = false
-script = ExtResource("5_qg736")
-stackable = true
+[node name="Goal" parent="Objects" instance=ExtResource("4_w3rey")]
+position = Vector2(1280, 0)
 
 [node name="Lever" parent="Objects" instance=ExtResource("2_2f7f0")]
-position = Vector2(384, 448)
-
-[node name="Boulder" parent="Objects" instance=ExtResource("5_bjwma")]
-position = Vector2(256, 576)
-
-[node name="Boulder2" parent="Objects" instance=ExtResource("5_bjwma")]
 position = Vector2(384, 576)
 
-[node name="Walls" type="TileMapLayer" parent="Objects"]
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAAUAAAADAAAAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAIAAAABAAsAAAABAAIAAAACAAsAAAABAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAGAAsAAAABAAIAAAAHAAsAAAABAAIAAAAIAAsAAAABAAIAAAAJAAsAAAAEAAAAAAA=")
-tile_set = SubResource("TileSet_betty")
-script = ExtResource("9_oeh3c")
+[node name="Plate" parent="Objects" instance=ExtResource("8_54m8a")]
+position = Vector2(513, 320)
 
-[node name="Player" type="Sprite2D" parent="."]
-position = Vector2(384, 384)
-scale = Vector2(2, 2)
-texture = ExtResource("1_iptua")
-centered = false
-script = ExtResource("3_ebeeu")
-grid = ExtResource("6_3cybb")
+[node name="Door" parent="Objects" instance=ExtResource("9_tj7r8")]
+position = Vector2(704, 384)
 
-[node name="Cursor" type="Sprite2D" parent="."]
-position = Vector2(1376, 256)
-scale = Vector2(2, 2)
-texture = ExtResource("2_2s8gt")
-centered = false
-script = ExtResource("5_8l2uv")
-grid = ExtResource("6_3cybb")
+[node name="Door2" parent="Objects" instance=ExtResource("10_ak7ug")]
+position = Vector2(768, 384)
 
-[node name="BlockList" type="Panel" parent="."]
-offset_left = 1723.0
-offset_right = 1920.0
-offset_bottom = 1088.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bjcbn")
+[node name="Boulder" parent="Objects" instance=ExtResource("5_bjwma")]
+position = Vector2(513, 576)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="BlockList"]
-clip_contents = false
-layout_mode = 0
-offset_left = 23.0
-offset_top = 18.0
-offset_right = 175.0
-offset_bottom = 1058.0
-scale = Vector2(1.00471, 1.02005)
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
+[node name="Player" parent="." instance=ExtResource("14_q4hx3")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BlockList/ScrollContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 3
-theme_override_constants/separation = 40
+[node name="Cursor" parent="." instance=ExtResource("15_wio4e")]
 
-[node name="Left" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
+[node name="BlockList" parent="." instance=ExtResource("16_aucji")]
 
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Left"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 151.0
-offset_bottom = 29.0
-theme = ExtResource("12_af6yh")
+[node name="CodeList" parent="." instance=ExtResource("17_rhide")]
 
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Left/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Left"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Left"]
-layout_mode = 0
-offset_top = -0.0024693
-offset_right = 152.0
-offset_bottom = 31.9975
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("5_opag7")
-
-[node name="Right" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Right"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme = ExtResource("12_af6yh")
-
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Right/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Right"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Right"]
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("7_36olu")
-
-[node name="Up" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Up"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme = ExtResource("12_af6yh")
-
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Up/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Up"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Up"]
-layout_mode = 0
-offset_top = -0.0024693
-offset_right = 152.0
-offset_bottom = 31.9975
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("6_a3yky")
-
-[node name="Down" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Down"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme = ExtResource("12_af6yh")
-
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Down/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Down"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Down"]
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("5_dnays")
-
-[node name="Interact" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Interact"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme = ExtResource("19_yaji6")
-
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Interact/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Interact"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Interact"]
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("12_ky0mn")
-
-[node name="Loop" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="BlockList/ScrollContainer/VBoxContainer/Loop"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 0
-offset_right = 152.0
-offset_bottom = 32.0
-theme = ExtResource("21_gevry")
-
-[node name="Label" type="Label" parent="BlockList/ScrollContainer/VBoxContainer/Loop/Panel"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 147.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 16
-text = "Loop"
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="BlockList/ScrollContainer/VBoxContainer/Loop"]
-layout_mode = 0
-offset_left = -2.0
-offset_right = 151.0
-offset_bottom = 32.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k6hy0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bdliw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_slj15")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s0dmo")
-script = ExtResource("4_0757y")
-blk = ExtResource("13_hwbw4")
-
-[node name="CodeList" type="Panel" parent="."]
-offset_left = 1340.0
-offset_right = 1723.0
-offset_bottom = 1088.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bjcbn")
-script = ExtResource("4_yyhdy")
-timer_interval = 0.2
-
-[node name="ListHighlight" type="Panel" parent="CodeList"]
-layout_mode = 2
-offset_left = 62.0
-offset_top = 108.0
-offset_right = 326.0
-offset_bottom = 1060.0
-theme = SubResource("Theme_i5hqk")
-
-[node name="Deselect" type="Button" parent="CodeList"]
-layout_mode = 0
-offset_right = 379.0
-offset_bottom = 1088.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_if6o0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_j45hg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhlu8")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tnfs7")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CodeList"]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 112.0
-offset_right = 322.0
-offset_bottom = 1056.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d08et")
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CodeList/ScrollContainer"]
-custom_minimum_size = Vector2(152, 32)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-theme_override_constants/separation = -2
-
-[node name="RunButton" type="Button" parent="CodeList"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 59.0
-offset_right = 356.0
-offset_bottom = 95.0
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tafi8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_kvja5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_pbcen")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lwoc8")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tf34t")
-text = "Run"
-
-[node name="ResetButton" type="Button" parent="CodeList"]
-layout_mode = 0
-offset_left = 36.0
+[node name="Button" type="Button" parent="."]
+offset_left = 1376.0
 offset_top = 16.0
-offset_right = 188.0
+offset_right = 1528.0
 offset_bottom = 52.0
-theme_override_fonts/font = ExtResource("9_tufpr")
+theme_override_fonts/font = ExtResource("17_o60dx")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6par6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7r380")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ynd5i")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ynd5i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eok5x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jnyqw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5vul")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5vul")
 text = "Reset"
 
-[node name="ClearButton" type="Button" parent="CodeList"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 16.0
-offset_right = 356.0
-offset_bottom = 52.0
-theme_override_fonts/font = ExtResource("9_tufpr")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nu3m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_m3ysb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rhidc")
-theme_override_styles/normal = SubResource("StyleBoxFlat_rhidc")
-text = "Clear"
-
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Left/Button" to="BlockList/ScrollContainer/VBoxContainer/Left/Button" method="_on_button_down"]
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Right/Button" to="BlockList/ScrollContainer/VBoxContainer/Right/Button" method="_on_button_down"]
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Up/Button" to="BlockList/ScrollContainer/VBoxContainer/Up/Button" method="_on_button_down"]
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Down/Button" to="BlockList/ScrollContainer/VBoxContainer/Down/Button" method="_on_button_down"]
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Interact/Button" to="BlockList/ScrollContainer/VBoxContainer/Interact/Button" method="_on_button_down"]
-[connection signal="button_down" from="BlockList/ScrollContainer/VBoxContainer/Loop/Button" to="BlockList/ScrollContainer/VBoxContainer/Loop/Button" method="_on_button_down"]
-[connection signal="button_down" from="CodeList/Deselect" to="CodeList" method="deselect"]
-[connection signal="button_down" from="CodeList/RunButton" to="CodeList" method="run_code"]
-[connection signal="button_down" from="CodeList/ResetButton" to="Objects" method="reset"]
-[connection signal="button_down" from="CodeList/ClearButton" to="CodeList" method="clear"]
+[connection signal="button_down" from="Button" to="Objects" method="reset"]

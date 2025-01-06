@@ -1,7 +1,7 @@
 class_name Tile_Item
 extends TileMapLayer
 
-var grid = load("res://Objects/Grid.tres")
+var grid = load("res://Objects/Grid.gd")
 
 func initialize(stackables:Dictionary)->void:
 	var item = Item.new()

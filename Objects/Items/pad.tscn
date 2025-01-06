@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://depjdjk3u57g4"]
+
+[ext_resource type="Texture2D" uid="uid://canfvoqt47ksb" path="res://Sprites/Objects/pad.png" id="1_75ruy"]
+[ext_resource type="Script" path="res://Objects/Scripts/items.gd" id="2_tsedn"]
+
+[node name="Pad" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_75ruy")
+centered = false
+script = ExtResource("2_tsedn")
+stackable = true

@@ -1,10 +1,10 @@
 class_name Item
-extends Node2D
+extends Sprite2D
 
 var grid = load("res://Objects/Grid.tres")
 ##player can interact with item
 @export var interactable:bool = false
-##player can share the same cell
+##other objects can share the same cell
 @export var passable:bool = true
 ##non-player objects can share the same cell
 @export var stackable:bool = false
@@ -30,3 +30,4 @@ func _to_string() -> String:
 
 func reset()->void:
 	cell = initial_state.cell
+	

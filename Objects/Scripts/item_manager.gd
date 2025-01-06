@@ -3,15 +3,18 @@ extends Node2D
 @export var grid:Resource
 var items:={}
 var stackables:={}
+#key = id, value = array of items with id
+var toggles:={}
 
 @onready var player = $"../Player"
 @onready var start_pad = $Pad
 @onready var goal = $Goal
 
+
 func _ready() -> void:
 	#create dictionaries for all objects
 	for child in get_children():
-		if child is TileMapLayer:
+		if child is Tile_Item:
 			child.initialize(stackables)
 		
 		elif child.stackable:
@@ -19,7 +22,13 @@ func _ready() -> void:
 		
 		elif child is Item:
 			items[child.cell] = child
-	
+			
+		if child is Togglable:
+			if child.id in toggles:
+				toggles[child.id].append(child)
+			else:
+				toggles[child.id]=[child]
+			
 	#set player position to start_pad
 	player.cell = start_pad.cell
 
@@ -34,16 +43,27 @@ func move_item(item: Item, old_cell:Vector2i, new_cell:Vector2i)->void:
 func is_occupied(cell:Vector2i)->bool:
 	if cell in items:
 		return true
+	
 	if cell in stackables and !stackables[cell].passable:
 		return true
+	
 	return false
 
 func reset()->void:
 	player.cell = start_pad.cell
 	$"../CodeList/RunButton".disabled = false
+	
+	for child in get_children():
+		if child is Pressure_Plate:
+			child.collision.monitoring=false
+	
 	for child in get_children():
 		if child is Item:
 			child.reset()
+	
+	for child in get_children():
+		if child is Pressure_Plate:
+			child.collision.monitoring=true
 
 func end_game()->void:
 	print("end game")

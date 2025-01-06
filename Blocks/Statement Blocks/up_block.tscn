@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c21yl6v7jnn4a" path="res://Blocks/Basic Block/block.tscn" id="1_kihw6"]
 [ext_resource type="Theme" uid="uid://br2jd411kbyjc" path="res://Themes/move_block_theme.tres" id="2_xefhc"]
-[ext_resource type="Script" path="res://Blocks/Statement Blocks/up_block.gd" id="3_r7nyb"]
+[ext_resource type="Script" path="res://Blocks/Scripts/up_block.gd" id="3_r7nyb"]
 
 [node name="Block" instance=ExtResource("1_kihw6")]
 theme = ExtResource("2_xefhc")

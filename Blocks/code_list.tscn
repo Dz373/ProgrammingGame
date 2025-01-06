@@ -1,0 +1,193 @@
+[gd_scene load_steps=22 format=3 uid="uid://dt7n0qecoo7m0"]
+
+[ext_resource type="Script" path="res://Blocks/Scripts/block_controller.gd" id="1_j8ttj"]
+[ext_resource type="FontFile" uid="uid://dbgjxcwekp8aq" path="res://Sprites/Fonts/pixelmix.ttf" id="2_ppmax"]
+[ext_resource type="Script" path="res://Blocks/Scripts/slider.gd" id="3_0sldv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjcbn"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ki0l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="Theme" id="Theme_i5hqk"]
+Panel/styles/panel = SubResource("StyleBoxFlat_5ki0l")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if6o0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j45hg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhlu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnfs7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d08et"]
+bg_color = Color(0.303233, 0.303233, 0.303233, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tafi8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvja5"]
+bg_color = Color(0, 0.292441, 0.0156803, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbcen"]
+bg_color = Color(0, 0.364305, 0.0246217, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwoc8"]
+bg_color = Color(0.105882, 0.72549, 0, 0.584314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf34t"]
+bg_color = Color(0, 0.729412, 0.0901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu3m5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3ysb"]
+bg_color = Color(0, 0.170657, 0.999999, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhidc"]
+bg_color = Color(0, 0.543851, 0.94163, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj207"]
+bg_color = Color(0.150807, 0.723236, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_xumxp"]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_dj207")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_dj207")
+
+[node name="CodeList" type="Panel"]
+offset_left = 1340.0
+offset_right = 1723.0
+offset_bottom = 1088.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bjcbn")
+script = ExtResource("1_j8ttj")
+
+[node name="ListHighlight" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 62.0
+offset_top = 108.0
+offset_right = 326.0
+offset_bottom = 1040.0
+theme = SubResource("Theme_i5hqk")
+
+[node name="Deselect" type="Button" parent="."]
+layout_mode = 0
+offset_right = 379.0
+offset_bottom = 1088.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if6o0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j45hg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhlu8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tnfs7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 112.0
+offset_right = 322.0
+offset_bottom = 1036.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d08et")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(152, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/separation = -2
+
+[node name="RunButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 59.0
+offset_right = 356.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ppmax")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tafi8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kvja5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pbcen")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lwoc8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tf34t")
+text = "Run"
+
+[node name="ClearButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 16.0
+offset_right = 356.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("2_ppmax")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nu3m5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m3ysb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rhidc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhidc")
+text = "Clear"
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 1057.0
+offset_right = 322.0
+offset_bottom = 1073.0
+theme = SubResource("Theme_xumxp")
+max_value = 1.0
+step = 0.1
+value = 0.2
+script = ExtResource("3_0sldv")
+
+[node name="Label" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -2.0
+offset_right = -5.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_ppmax")
+theme_override_font_sizes/font_size = 16
+text = "Interval:"
+
+[node name="Label2" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -2.0
+offset_right = 258.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_ppmax")
+text = "0s
+"
+
+[connection signal="button_down" from="Deselect" to="." method="deselect"]
+[connection signal="button_down" from="RunButton" to="." method="run_code"]
+[connection signal="button_down" from="ClearButton" to="." method="clear"]
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]

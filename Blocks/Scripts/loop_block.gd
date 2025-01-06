@@ -5,8 +5,18 @@ extends Block
 @onready var list_highlight = $ColorRect
 @onready var loop_num = $SpinBox
 
+@export var preset:bool=false
+@export var iterations:int = 1
+
 func _ready() -> void:
 	highlight = $List/Panel/ColorRect
+	
+	if preset:
+		for child in get_children():
+			if child is Block:
+				child.reparent(list)
+		list.move_child($List/Panel, list.get_children().size())
+		loop_num.value = iterations
 
 func statement_call(player: Object) -> void:
 	var code_list = list.get_children()
@@ -15,7 +25,7 @@ func statement_call(player: Object) -> void:
 			if blk is Block:
 				block_controller.cur_blk=blk
 				await blk.statement_call(player)
-				await get_tree().create_timer(block_controller.timer_interval).timeout
+				await get_tree().create_timer(block_controller.timer_slider.value).timeout
 
 func loop_select()->void:
 	if block_controller.insert_list == list:
